@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="berita"
+            type="com.example.tugasdatabinding.DataBerita" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:contentPadding="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        >
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tvKategoriHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{berita.kategoriBerita}"
+                    android:textColor="#FF7373"/>
+                <TextView
+                    android:id="@+id/tvJudulBeritaHome"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{berita.judulBerita}"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tvTanggalBeritaHome"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{berita.tanggalBerita}"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:id="@+id/tvPenulisBerita"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{berita.penulisBerita}"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/imgBerita"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                app:imageResource = "@{berita.imgBerita}"
+                android:contentDescription="@string/image"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

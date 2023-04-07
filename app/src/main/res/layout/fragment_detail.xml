@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.DetailFragment">
+    <data>
+        <variable
+            name="berita"
+            type="com.example.tugasdatabinding.DataBerita" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imgDetail"
+                android:layout_width="match_parent"
+                android:layout_height= "320dp"
+                app:imageResource = "@{berita.imgBerita}"
+                android:contentDescription="@string/image"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:id="@+id/tvJudulBerita"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24sp"
+                    android:text="@{berita.judulBerita}"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/tvPenulis"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@{berita.penulisBerita + '|' + berita.kategoriBerita}"/>
+                <TextView
+                    android:id="@+id/tvTanggal"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@{berita.tanggalBerita}"/>
+                <TextView
+                    android:id="@+id/tvDeskripsi"
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:text="@{berita.deskripsiBerita}"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>
